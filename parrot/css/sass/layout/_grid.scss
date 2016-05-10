@@ -1,0 +1,116 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "susy"; // Susy Grids
+//@import "zen"; // Zen Grids
+//@import "breakpoint"; //@Media Query Mixins
+
+// ---------------------------------------------------------------------------
+// Susy Grid
+
+
+//this is the default number of columns
+$total-columns: 4;
+//width of each column
+$column-width   : 6em;
+//space between columns
+$gutter-width   : 1.5em;
+//space on the right and left of the grid
+$grid-padding   : $gutter-width;
+
+$show-grid-backgrounds  : true;
+
+//alternative layout breakpoints
+$narrow:30em 6;
+$tablet:40em 8;
+$computer:52em 12;
+$wide: 65em 12;
+
+
+// ---------------------------------------------------------------------------
+// Media Query Settings for use with Breakpoint
+
+/*
+
+$breakpoint-default-media: all;
+$breakpoint-default-pair: width;
+
+$narrow: 32em;
+$tablet: 48em;
+$computer: 63em;
+$wide: 80em;
+
+*/
+
+
+// ---------------------------------------------------------------------------
+// mobile first, grid styles
+
+.container{
+  @include container;
+  @include susy-grid-background;
+
+  // Default grid blocks here following the Mobile First strategy.
+
+}
+
+
+
+// ---------------------------------------------------------------------------
+// first breakpoint
+
+@include at-breakpoint($narrow){ //use breakpoint($variable-name) if using "Breakpoint"
+  .container{
+      @include container;
+      @include susy-grid-background;
+
+    // Block specific grid setting overrides in here.
+
+  }
+}
+
+
+
+// ---------------------------------------------------------------------------
+// second breakpoint
+
+@include at-breakpoint($tablet){ //use breakpoint($variable-name) if using "Breakpoint"
+
+  .container{
+      @include container;
+      @include susy-grid-background;
+
+    // Block specific grid setting overrides in here.
+
+  }
+}
+
+
+
+// ---------------------------------------------------------------------------
+// third breakpoint
+
+@include at-breakpoint($computer){ //use breakpoint($variable-name) if using "Breakpoint"
+  .container{
+      @include container;
+      @include susy-grid-background;
+
+    // Block specific grid setting overrides in here.
+
+  }
+}
+
+
+
+// ---------------------------------------------------------------------------
+// fourth breakpoint
+
+@include at-breakpoint($wide){ //use breakpoint($variable-name) if using "Breakpoint"
+  .container{
+      @include container;
+      @include susy-grid-background;
+
+    // Block specific grid setting overrides in here.
+
+  }
+}
